@@ -81,5 +81,11 @@ RSpec.describe AddressBook do
             # Check the size of the entries in AddressBook
             expect(book_size).to eq 5
         end
+        
+        it "imports the correct number of entries_2" do
+            book.import_from_csv("entries_2.csv")
+            book_size = book.entries.size
+            expect(book_size).to eq 3
+        end
     end
 end
